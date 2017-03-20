@@ -181,3 +181,33 @@ def RNN_forward(self,input_array):
 
 
 我们思考一下卷积神经网络，误差sensitive map是一个m x n的矩阵，而且随着层数的变化，sensitive map 的长和宽也在变化，但是在循环神经网络中，由于一条s链中，所有的state 都是同一维度的，所以对于误差sensitive map 而言，它的sensitive map 的维度就是 state 的维度
+
+我们先考虑从k+1 层传递到k 层的误差sensitive map
+```
+def calcul_delat_k(self,k,activator):
+
+    state = self.state_list[k+1]
+
+    treat_element(state,activator.backward)
+
+    deltat_k = np.dot((np.dot(self.state_list[k+1].T,self.W)),np.diag(state[:])).T
+```
+接着我们考虑整一条 s 链
+
+```
+def calcul_deltat(self,sensitive_map,activator):
+
+    deltat_list = []
+
+    # make all the deltat to 0
+    for i in range(self.times):
+        self.deltat_list.append(np.zeros((self.state_width,1)))
+        self.deltat_list.append(sensitive_map)
+
+    # backward tranformation
+    for j in range(self.times -1,0,-1):
+        deltat_k = calcul_deltat_k(j,activator)
+        deltat_list.append(deltat_k)
+```
+这段代码特别注意，因为误差sensitive map 是从后往前计算的，所以需要初始化所有的deltat_list 然后把s链最终的一个sensitive map 压入这个列表中
+
