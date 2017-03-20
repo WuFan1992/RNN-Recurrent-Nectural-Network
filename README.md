@@ -248,3 +248,28 @@ def calcul_deltat(self,sensitive_map,activator):
 最终总的权重传递等于s链中各个s（图中共有6个s）的权重改变量之和
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/26.PNG)
+
+对于链s 上每一个s ，计算梯度的代码如下
+
+```
+def gradient_t(self,t):
+
+    gradient_t = np.dot(self.deltat_list[t].T,self.state_list[t-1])
+    self.gradient_list[t] = gradient_t
+    
+```
+
+总的代码如下
+```
+def gradient(self):
+
+    self.gradient_list=[]
+    for i in range(self.times):
+        self.gradient_list.append(np.zeros((self.state_width,1))
+                                  
+    for j in range(self):
+        self.gradient_t(j)
+        self.gradient_list = reduce(lambda a,b :a+b,self.gradient_list,self.gradient_list[0])
+                                  
+```
+注意这里使用了reduce 函数这个，函数是运用第一个参数定义的函数，对后面的列表，数组的所有元素进行操作
