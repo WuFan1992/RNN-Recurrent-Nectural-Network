@@ -211,3 +211,13 @@ def calcul_deltat(self,sensitive_map,activator):
 ```
 这段代码特别注意，因为误差sensitive map 是从后往前计算的，所以需要初始化所有的deltat_list 然后把s链最终的一个sensitive map 压入这个列表中
 
+### 纵向传递
+
+纵向传递实际上和全连接层的完全一致
+公式如下
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/19.PNG)
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/20.PNG)
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/21.PNG)
