@@ -170,3 +170,14 @@ def RNN_forward(self,input_array):
 结合在一起等于
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/17.PNG)
+
+下面正式开始求误差，根据定义，误差是误差函数关于加权输入的偏导数，根据链式法则，得到
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/18.PNG)
+
+在我们的代码中，我们先来假设从K+1 时刻反向传递到 K时刻，这个时候根据上面这个式子，公式化为：
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/19.JPG)
+
+
+我们思考一下卷积神经网络，误差sensitive map是一个m x n的矩阵，而且随着层数的变化，sensitive map 的长和宽也在变化，但是在循环神经网络中，由于一条s链中，所有的state 都是同一维度的，所以对于误差sensitive map 而言，它的sensitive map 的维度就是 state 的维度
