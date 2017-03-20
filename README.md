@@ -156,3 +156,17 @@ def RNN_forward(self,input_array):
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/13.PNG)
 
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/14.PNG)
+
+上式左边一项等于
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/15.PNG)
+
+上式右边一项等于
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/16.PNG)
+
+结合在一起等于
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/17.PNG)
