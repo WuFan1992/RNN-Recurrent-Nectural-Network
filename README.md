@@ -55,3 +55,22 @@ x 是输入层的值，s 是隐藏层的值，o 是输出层的值，如果没�
 
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/9.png)
+
+上图中，一共有3个隐藏层
+
+## 正向传播
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/10.png)
+
+我们先取只有一个隐藏层来分析
+根据下面的公式：
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/11.PNG)
+
+
+注意在这个公式里，s 和 x 是向量，而W 和 U 是矩阵，怎么理解这个s 和 x 呢？
+我们假设 x(t) 代表的是中文的“ 我 ”，我们要把个“我” 变成向量（变成向量是因为神经网络是针对向量进行操作的），那我先假设有一个3000维的词库，在这个词库里，第1956位为1 其余为0 代表的是“我”， 那么写成向量的形式就是 {0,0,0·······0，1,0，0·······}
+
+所以把上面的公式写成矩阵的形式，就如下：
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/12.PNG)
