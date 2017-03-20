@@ -236,3 +236,15 @@ def calcul_deltat(self,sensitive_map,activator):
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/23.PNG)
 
+由于对W 求导，和Ux（t）无关，所以
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/24.PNG)
+
+
+对于整个矩阵，就变成
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/25.PNG)
+
+最终总的权重传递等于s链中各个s（图中共有6个s）的权重改变量之和
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/26.PNG)
