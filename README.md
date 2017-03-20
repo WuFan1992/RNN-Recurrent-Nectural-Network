@@ -221,3 +221,18 @@ def calcul_deltat(self,sensitive_map,activator):
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/20.PNG)
 
 ![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/21.PNG)
+
+
+
+### 权重的传递
+
+最关键的在于权重的传递，也就是要求出误差函数关于权重的偏导数
+
+总的权重传递图如下
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/22.png)
+
+公式如下
+
+![](https://github.com/WuFan1992/RNN-Recurrent-Nectural-Network/blob/master/image/23.PNG)
+
