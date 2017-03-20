@@ -97,3 +97,29 @@ w(j,i) 指的是**循环层** t-1 时刻 第 i 维神经元（一共150维），
 3. W矩阵和U矩阵
 
 4. 记录一条链上的时刻个数的,在上面的例子中时刻个数为6
+
+```
+
+class RNN_layer(object):
+
+    def _init_(self,input_width,state_width,learning_rate,activators):
+
+        self.input_width = input_width # the dimension of  x
+
+        self.state_width = state_width  # the dimension of each state
+
+        self.activators = activators
+
+        self.learning_rate = learning_rate
+
+        self.U = np.randoms.uniform(-1e-4,1e-4,(state_width,input_width))
+
+        self.W = np.zeros(-1e-4,1e-4,(state_width,state_width))
+
+        # we also need to save each state
+
+        self.state_list = []
+        self.state_list.append(np.zeros(state_width,1))
+
+        self.times = 0
+```
